@@ -1,0 +1,43 @@
+package exam1;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+/**
+ *
+ * @author 
+ * NAME: AHMAD ZAINI BIN ABDULLAH @ BAKAR
+ * STUDENT ID: 2017841002
+ *          
+ */
+public class question1 {
+
+    /*
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       String fileName = "C:/Users/mycmatz/Documents/NetBeansProjects/exam1/src/exam1/A.csv";
+       File file = new File(fileName);
+       try{
+           try (Scanner inputStream = new Scanner(file)) {
+               while (inputStream.hasNext()){
+                   String A = inputStream.next();
+                   System.out.println(A);
+                   Scanner read = new Scanner (System.in);
+                
+                   String reverse = "";
+                   
+                   for(int i = A.length()-1; i >= 0;i--)
+                   {
+                      reverse = reverse + A.charAt(i);
+                   }
+                   
+                   /*System.out.println("");*/
+                   System.out.println(reverse);
+               }
+               inputStream.close();
+           }
+       }catch (FileNotFoundException e){
+       }
+       }
+     
+    }
